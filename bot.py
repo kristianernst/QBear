@@ -24,7 +24,11 @@ async def on_message(message):
     conversation_history = await build_conversation_history(message)
     try:
       response = await q_bear_instance.query(conversation_history)
-      await message.reply(response.content)
+      if len(response.content) > 2000:
+        response.content = response.content[:1800]
+        await message.reply(f"Truncated output\n\n{response.content} ")
+      else:  
+        await message.reply(response.content)
     except Exception as e:
       logging.error(f"Error in generating response: {e}")
       await message.reply("Sorry, I encountered an error.")
