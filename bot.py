@@ -1,8 +1,11 @@
 import asyncio
 import os
+
 import discord
 from langchain.schema import AIMessage, HumanMessage
+
 from model import QBEAR
+
 from dotenv import load_dotenv; load_dotenv()
 import logging; logging.basicConfig(level=logging.INFO)
 
@@ -25,7 +28,7 @@ async def on_message(message):
     try:
       response = await q_bear_instance.query(conversation_history)
       if len(response.content) > 2000:
-        response.content = response.content[:1800]
+        response.content = response.content[:1990]
         await message.reply(f"Truncated output\n\n{response.content} ")
       else:  
         await message.reply(response.content)

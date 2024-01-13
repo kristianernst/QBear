@@ -1,4 +1,4 @@
 .env
-.__pycache__
+__pycache__
 .ruff_cache
 cat.py
