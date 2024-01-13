@@ -3,6 +3,8 @@
 - Run it locally blazingly fast on your M1 Max or equivalent.
 - Only 100 lines of python code.
 
+![demo](/assets/example.png)
+
 ## Instructions
 This is a discord bot that is meant to be hosted locally from your PC.
 It leverages the discord.py library to interact with the discord API.
